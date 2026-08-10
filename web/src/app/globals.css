@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-ink: #0b0e11;
+  --color-muted: #5c6570;
+  --color-gain: #00c805;
+  --color-gain-dark: #00a004;
+  --color-gain-soft: #e6f9e7;
+  --color-paper: #f6f8f7;
+  --color-white: #ffffff;
+  --color-line: #e4e9e6;
+  --color-amber: #ffb800;
+  --color-sky: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
