@@ -38,7 +38,7 @@ coderabbit --version 2>/dev/null || echo "NOT_INSTALLED"
 coderabbit auth status 2>&1
 
 # Run review on current changes (agent-readable)
-cr review --agent -t uncommitted
+cr review --agent --base main -t uncommitted
 ```
 
 If Code Rabbit is not installed or not authenticated, tell the user and skip the review for that session — do not silently skip it.
