@@ -153,4 +153,4 @@ Length target: **1,200–1,800 words** for pillars; **800–1,200** for seasonal
 
 ## 8. Implementation note
 
-Add `/blog` routes to [`drink-free-landing`](drink-free-landing/) (MDX or simple React pages) when ready to publish Post 1–2. Until then this doc is the editorial backlog.
+Ship `/blog` as MDX in `web/src/content/blog` (no CMS). Posts 1–5 first; 6–12 stay on the index as upcoming until drafted.

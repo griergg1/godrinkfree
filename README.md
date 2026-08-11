@@ -12,7 +12,7 @@ Product: **Drink Free** · Domain: [godrinkfree.com](https://godrinkfree.com)
 
 ## Stack (locked)
 
-- **Web:** Vercel + Next.js + Sanity (phase 2) + Supabase + Resend  
+- **Web:** Vercel + Next.js + Tailwind + Supabase + Resend + Sentry  
 - **App:** Expo + Supabase + Resend + RevenueCat (IAP)
 
 ## Start here

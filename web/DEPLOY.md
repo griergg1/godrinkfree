@@ -17,6 +17,8 @@ Project: `griergg1s-projects/godrinkfree` · Root directory: `web`
 | `NEXT_PUBLIC_SITE_URL` | Recommended | `https://godrinkfree.com` |
 | `RESEND_API_KEY` | Optional | Waitlist confirm email |
 | `RESEND_FROM_EMAIL` | Optional | e.g. `Drink Free <hello@godrinkfree.com>` |
+| `NEXT_PUBLIC_SENTRY_DSN` | Optional | Sentry browser/edge DSN |
+| `SENTRY_DSN` | Optional | Sentry server DSN |
 
 \* Without Supabase keys, the form returns a clear “missing env” message instead of silently failing.
 
@@ -61,8 +63,19 @@ cp .env.example .env.local
 npm run dev
 ```
 
+## Sentry
+
+| Variable | Required | Notes |
+|----------|----------|-------|
+| `NEXT_PUBLIC_SENTRY_DSN` | Optional | Browser + edge client DSN |
+| `SENTRY_DSN` | Optional | Server DSN (falls back to public if unset) |
+| `SENTRY_AUTH_TOKEN` | Optional | Source maps upload on build |
+| `SENTRY_ORG` / `SENTRY_PROJECT` | Optional | With auth token for source maps |
+
+Without a DSN, Sentry init is a no-op and the site runs normally.
+
 ## Phase 2 (not done)
 
-- Sanity blog  
+- More SEO posts (series 6–12)  
 - Vercel Analytics  
 - Resend production from-domain (verify domain in Resend)  

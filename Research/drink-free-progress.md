@@ -16,6 +16,7 @@
 | 5 | Mon 10 Aug 2026 | ~16:03 | ~16:10 | Domains scan; stack lock; **godrinkfree.com** purchased |
 | 6 | Mon 10 Aug 2026 | ~16:08 | ~16:12 | Project folder: `~/GODRINKFREE` (Landing page / App / Research) |
 | 7 | Mon 10 Aug 2026 | ~16:14 | ~17:39 | Port Vite landing → Next.js; deploy to Vercel; live waitlist + pricing block; clean repo; GitHub push |
+| 8 | Tue 11 Aug 2026 | ~12:56 | ~13:20 | Scratch Sanity → Sentry; MDX SEO blog posts 1–5; /blog live |
 
 ---
 
@@ -97,7 +98,7 @@
 
 **Done**
 - Domain scan → [`drink-free-domains.md`](drink-free-domains.md)
-- Stack locked to Vercel / Supabase / Resend / Sanity (+ RevenueCat for IAP)
+- Stack locked to Vercel / Supabase / Resend / Sentry (+ RevenueCat for IAP)
 - **Purchased `godrinkfree.com`**
 
 **Open / next**
@@ -140,9 +141,30 @@
 - Updated this progress log
 
 **Open / next**
-- Set DNS records at DreamHost for `godrinkfree.com` (A → 76.76.21.21)
+- Set DNS records at DreamHost for `godrinkfree.com` (A → 76.76.21.21) — done by user Session 8; await propagation
 - Add `RESEND_API_KEY` and `RESEND_FROM_EMAIL` to send waitlist confirmations
-- Phase 2: Sanity blog, first SEO posts, Vercel Analytics
+- Phase 2: more SEO posts (6–12), Vercel Analytics, Sentry DSN in Vercel
+
+---
+
+## Session 8 — Tue 11 Aug 2026 (~12:56 → ~13:20 BST)
+
+**Goal:** Map + ship SEO blog; correct stack (Sanity → Sentry).
+
+**Done**
+- Scratched **Sanity** from locked stack docs; locked **Sentry** for error monitoring
+- MDX blog in `web/src/content/blog` with `/blog` index + `/blog/[slug]`
+- Published posts 1–5 (calories, money, quit vs cut-back, sober curious, best apps 2026)
+- Mapped posts 6–12 as upcoming on the index
+- Sitemap + robots; Header/footer Blog links; waitlist CTAs with `utm_source=blog`
+- Minimal `@sentry/nextjs` (no-op without DSN); env docs in `DEPLOY.md` / `.env.example`
+- Code Rabbit: softened competitor comparison table (0 findings after fix)
+
+**Open / next**
+- Confirm `godrinkfree.com` DNS propagation
+- Add Resend env vars when ready
+- Add `NEXT_PUBLIC_SENTRY_DSN` in Vercel
+- Draft SEO posts 6–12; Vercel Analytics
 
 ---
 

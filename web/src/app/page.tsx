@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { BadgeShelf } from '@/components/BadgeShelf'
 import { CaloriesPanel } from '@/components/CaloriesPanel'
 import { Header } from '@/components/Header'
@@ -180,7 +181,13 @@ export default function Home() {
         <div className="mb-3 flex justify-center">
           <Logo />
         </div>
-        <p>Drink Free · Not medical advice · Not affiliated with Smoke Free</p>
+        <p>
+          <Link href="/blog" className="font-semibold text-ink hover:text-gain-dark">
+            Blog
+          </Link>
+          {' · '}
+          Drink Free · Not medical advice · Not affiliated with Smoke Free
+        </p>
       </footer>
     </div>
   )

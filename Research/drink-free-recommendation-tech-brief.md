@@ -115,12 +115,13 @@ No new vendors. Reuse what you already run elsewhere:
 | Host | **Vercel** | Site + API routes / server actions |
 | App framework | **Next.js** on Vercel (migrate from current Vite prototype) | SSR/SEO for blog; matches your other projects |
 | UI | React + Tailwind (port existing `drink-free-landing` components) | Keep visual work |
-| CMS / blog | **Sanity** | SEO posts from blog series; portable text → pages |
+| Blog | **MDX in-repo** (`web/src/content/blog`) | SEO posts from blog series; no CMS |
 | Waitlist + users | **Supabase** (Postgres table + RLS) | Own the list |
 | Email | **Resend** | Waitlist confirm + digests + transactional |
+| Errors | **Sentry** | Next.js client + server monitoring |
 | Analytics | Vercel Analytics (already in ecosystem) | Enough for v1 |
 
-Current Vite prototype in [`drink-free-landing/`](drink-free-landing/) is a **design prototype** — fold it into a Next.js + Sanity project on Vercel for production.
+Current Vite prototype in [`drink-free-landing/`](drink-free-landing/) is a **design prototype** — fold it into a Next.js project on Vercel for production.
 
 ### Landing IA
 1. Hero (brand + twin gains + phone mock)  
@@ -130,12 +131,12 @@ Current Vite prototype in [`drink-free-landing/`](drink-free-landing/) is a **de
 5. Pricing honesty block (Free vs Pro — *before* waitlist form)  
 6. Trust (not medical device)  
 7. Waitlist (Supabase insert → Resend confirm)  
-8. Footer → Blog (Sanity)  
+8. Footer → Blog (MDX)  
 
 ### Landing backlog (priority)
 1. Next.js app on Vercel; port UI from Vite prototype  
 2. Supabase waitlist table + Resend confirm  
-3. Sanity schema for blog; publish posts 1–2  
+3. MDX blog; publish posts 1–5  
 4. Pricing section matching SKUs  
 5. Custom domain + OG images  
 
@@ -172,7 +173,7 @@ Local cache on device (SQLite or SecureStore + Zustand) for snappy offline UX �
 | Push | Expo Notifications |
 | Email (account/lifecycle) | **Resend** (same as web) |
 
-Marketing site stays on **Vercel + Sanity + Resend + Supabase**; app talks to the **same Supabase project** (or a dedicated Drink Free project in the same org).
+Marketing site stays on **Vercel + Next.js + Resend + Supabase + Sentry** (MDX blog in-repo); app talks to the **same Supabase project** (or a dedicated Drink Free project in the same org).
 
 ### Architecture
 
@@ -180,7 +181,7 @@ Marketing site stays on **Vercel + Sanity + Resend + Supabase**; app talks to th
 flowchart TB
   subgraph web [Vercel Next.js]
     Landing[Landing + waitlist API]
-    Blog[Sanity-powered blog]
+    Blog[MDX blog]
   end
   subgraph mobile [Expo app]
     UI[Screens / Twin gains]
@@ -193,11 +194,12 @@ flowchart TB
     Edge[Edge Functions]
   end
   Resend[Resend]
-  Sanity[Sanity CMS]
+  Sentry[Sentry]
 
   Landing --> DB
   Landing --> Resend
-  Blog --> Sanity
+  Landing --> Sentry
+  Blog --> Sentry
   UI --> Auth
   UI --> DB
   UI --> Cache
@@ -283,9 +285,9 @@ Landing and app can overlap: **A/B in parallel with C**.
 | Platform | iOS first (Expo → Android later) |
 | Positioning | Gamey twin gains, dual track, wellness |
 | Monetization | Freemium Pro ~$8/mo or $50/yr |
-| **Web stack** | **Vercel + Next.js + Sanity + Resend + Supabase** · domain **godrinkfree.com** |
+| **Web stack** | **Vercel + Next.js + Supabase + Resend + Sentry** (MDX blog) · domain **godrinkfree.com** |
 | **App stack** | **Expo + Supabase + Resend + RevenueCat** |
-| New vendors | None except RevenueCat for IAP |
+| New vendors | None except RevenueCat for IAP + Sentry for errors |
 | Community / coaching | Out |
 | Clinical / DiGA | Out |
 
@@ -294,7 +296,7 @@ Landing and app can overlap: **A/B in parallel with C**.
 ## 10. Immediate next actions
 
 1. Spin up Drink Free **Supabase** project (or schema in existing org)  
-2. **Next.js on Vercel**: port landing UI; **Resend** waitlist; **Sanity** blog  
+2. **Next.js on Vercel**: port landing UI; **Resend** waitlist; **MDX** blog; **Sentry**  
 3. Scaffold Expo app wired to same Supabase Auth  
 4. Privacy policy page before TestFlight  
 5. Domain: **`godrinkfree.com`** → Vercel  

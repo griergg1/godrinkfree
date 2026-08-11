@@ -10,7 +10,7 @@
 - **Brand voice:** Light, gamey, Robinhood-style twin gains. Say **"points"**, never "XP".
 - **Domain:** [godrinkfree.com](https://godrinkfree.com) (Vercel production: https://godrinkfree.vercel.app)
 - **Stack (locked):**
-  - Web: Vercel + Next.js + Tailwind + Supabase + Resend + Sanity (phase 2)
+  - Web: Vercel + Next.js + Tailwind + Supabase + Resend + Sentry
   - App: Expo + Supabase + Resend + RevenueCat (IAP) — **do not touch unless explicitly asked**
 - **Source of truth:** `Research/drink-free-recommendation-tech-brief.md`
 
@@ -66,7 +66,7 @@ rg -n "any|unknown" src/ --type tsx --type ts  # unchecked types
 Treat every hit as a bug until proven otherwise. Fix or document the intentional ones.
 
 ### 3. No new vendors
-Do not introduce new marketing, payment, analytics, or backend vendors unless the user explicitly asks. The locked stack is: Vercel, Next.js, Tailwind, Supabase, Resend, Sanity, Expo, RevenueCat.
+Do not introduce new marketing, payment, analytics, or backend vendors unless the user explicitly asks. The locked stack is: Vercel, Next.js, Tailwind, Supabase, Resend, Sentry, Expo, RevenueCat.
 
 ### 4. Keep visual language
 No purple-AI-default look. Light background (`#f6f8f7`), green gains (`#00c805`), rounded cards, gamey copy.
