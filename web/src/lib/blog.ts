@@ -90,6 +90,19 @@ export const UPCOMING_POSTS: BlogPostMeta[] = [
   },
 ]
 
+function toIsoDate(value: unknown): string {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10)
+  }
+  if (typeof value === 'string' || typeof value === 'number') {
+    const d = new Date(value)
+    if (!Number.isNaN(d.getTime())) return d.toISOString().slice(0, 10)
+    const asString = String(value).slice(0, 10)
+    if (/^\d{4}-\d{2}-\d{2}$/.test(asString)) return asString
+  }
+  throw new Error(`Invalid blog date: ${String(value)}`)
+}
+
 function parsePost(fileName: string): BlogPost {
   const raw = fs.readFileSync(path.join(BLOG_DIR, fileName), 'utf8')
   const { data, content } = matter(raw)
@@ -103,7 +116,7 @@ function parsePost(fileName: string): BlogPost {
     title: meta.title,
     description: meta.description ?? '',
     slug: meta.slug,
-    date: String(meta.date).slice(0, 10),
+    date: toIsoDate(meta.date),
     primaryKw: meta.primaryKw ?? '',
     status: meta.status === 'upcoming' ? 'upcoming' : 'published',
     faqs: meta.faqs,
