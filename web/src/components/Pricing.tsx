@@ -33,7 +33,7 @@ export function Pricing() {
         Pricing honesty
       </p>
       <h2 className="mt-2 max-w-2xl text-[clamp(1.8rem,3.5vw,2.6rem)] font-extrabold tracking-[-0.04em]">
-        Free core. Pro when you want the full game.
+        Free core. Pro when you want the full toolkit.
       </h2>
       <p className="mt-3 max-w-xl text-muted">
         Price before the waitlist — no surprise billing traps. Cancel anytime in App Store

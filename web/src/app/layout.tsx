@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const jakarta = Plus_Jakarta_Sans({
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s · Drink Free',
   },
   description:
-    'Drink Free — level up your drink-free gains. Quit or cut back with money charts, calorie tracking, mission points, and treats. iOS first.',
+    'Drink Free — track your drink-free gains. Quit or cut back with money charts, calorie tracking, daily missions, and points. iOS first.',
   applicationName: 'Drink Free',
   keywords: [
     'quit drinking',
@@ -50,7 +51,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
-      <body className={`${jakarta.className} min-h-full`}>{children}</body>
+      <body className={`${jakarta.className} min-h-full`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }

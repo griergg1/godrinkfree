@@ -52,7 +52,7 @@ export default function OgImage() {
               lineHeight: 1.05,
             }}
           >
-            <span style={{ display: 'flex' }}>Level up your</span>
+            <span style={{ display: 'flex' }}>Watch your</span>
             <span style={{ display: 'flex', color: '#00C805' }}>drink-free gains</span>
           </div>
           <div style={{ display: 'flex', fontSize: 28, color: '#5C6570', maxWidth: 720 }}>

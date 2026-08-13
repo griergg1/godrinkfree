@@ -15,7 +15,7 @@ export function Header() {
           Gains
         </Link>
         <Link href="/#play" className="hover:text-ink">
-          Play
+          How it works
         </Link>
         <Link href="/#tracks" className="hover:text-ink">
           Modes

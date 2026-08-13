@@ -11,7 +11,7 @@ export function TrackModes() {
         Two modes
       </p>
       <h2 className="mt-2 text-[clamp(1.8rem,3.5vw,2.6rem)] font-extrabold tracking-[-0.04em]">
-        Pick your game mode
+        Pick your mode
       </h2>
 
       <div className="mt-6 inline-flex rounded-full border border-line bg-white p-1">
@@ -38,9 +38,9 @@ export function TrackModes() {
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {(mode === 'quit'
           ? [
-              ['Alcohol-free timer', 'Watch the clock climb like a score.'],
+              ['Alcohol-free timer', 'Watch the clock climb, day after day.'],
               ['Twin gains', '£ and kcal stack every dry day.'],
-              ['Lapse = new run', 'No shame screen. Hit restart, keep your points history.'],
+              ['Lapse = fresh start', 'No shame screen. Reset and keep your points history.'],
               ['Identity card', 'You’re building a non-drinker streak, not a penance.'],
             ]
           : [

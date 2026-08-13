@@ -9,7 +9,7 @@ type BlogCtaProps = {
 export function BlogCta({
   slug,
   headline = 'Track money + calories in Drink Free',
-  body = 'Quit or cut back — same game. Twin gains on a live scoreboard. Hop the iOS waitlist.',
+  body = 'Quit or cut back — same goal. Twin gains you can watch add up. Join the iOS waitlist.',
 }: BlogCtaProps) {
   const href = `/?utm_source=blog&utm_medium=cta&utm_campaign=${encodeURIComponent(slug)}#waitlist`
 

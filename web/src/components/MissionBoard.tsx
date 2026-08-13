@@ -2,20 +2,20 @@ const missions = [
   {
     pts: '+40',
     title: 'Ride the wave',
-    body: 'When a craving hits, start the 5-minute timer. Survive it → protect your streak.',
-    tag: 'Combat',
+    body: 'When a craving hits, start the 5-minute timer. Get through it → protect your streak.',
+    tag: 'Craving',
   },
   {
     pts: '+25',
     title: 'Plan tonight',
     body: 'Pick your NA drink and exit time before you go out. Budget stays green.',
-    tag: 'Quest',
+    tag: 'Plan',
   },
   {
     pts: '+60',
     title: 'Treat check',
     body: 'Move £10 of saved cash into your treat vault. Make the win feel real.',
-    tag: 'Loot',
+    tag: 'Reward',
   },
 ]
 
@@ -26,11 +26,11 @@ export function MissionBoard() {
         Daily missions
       </p>
       <h3 className="mt-1 text-[1.5rem] font-extrabold tracking-tight">
-        Tiny quests. Real points.
+        Small actions. Real points.
       </h3>
       <p className="mt-2 text-[0.9rem] text-white/60">
-        Points = your score for showing up. Earn them from missions and dry days — they fill
-        your level bar.
+        Points add up for showing up. Earn them from daily missions and dry days — they track
+        your progress.
       </p>
       <ul className="mt-6 space-y-3">
         {missions.map((m) => (

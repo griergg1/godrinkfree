@@ -7,7 +7,7 @@
 ## Project snapshot
 
 - **Product:** Drink Free — habit companion for quitting or cutting back on alcohol.
-- **Brand voice:** Light, gamey, Robinhood-style twin gains. Say **"points"**, never "XP".
+- **Brand voice:** Serious but motivating — Robinhood-style twin gains, momentum, milestones, and rewards. The product can *look* energetic (charts, streaks, progress), but the purpose is serious: this is a habit companion, not a game. **Avoid "game / gamey / gamified / play the game / level up / boss fights / quests."** Say **"points"**, never "XP".
 - **Domain:** [godrinkfree.com](https://godrinkfree.com) (Vercel production: https://godrinkfree.vercel.app)
 - **Stack (locked):**
   - Web: Vercel + Next.js + Tailwind + Supabase + Resend + Sentry
@@ -69,7 +69,7 @@ Treat every hit as a bug until proven otherwise. Fix or document the intentional
 Do not introduce new marketing, payment, analytics, or backend vendors unless the user explicitly asks. The locked stack is: Vercel, Next.js, Tailwind, Supabase, Resend, Sentry, Expo, RevenueCat.
 
 ### 4. Keep visual language
-No purple-AI-default look. Light background (`#f6f8f7`), green gains (`#00c805`), rounded cards, gamey copy.
+No purple-AI-default look. Light background (`#f6f8f7`), green gains (`#00c805`), rounded cards, serious-but-motivating copy (energetic look, serious purpose — never "gamey").
 
 ### 5. Safety/legal copy
 Any health/wellness claim must include the standard disclaimer: *Drink Free is a habit companion, not a medical device. We do not diagnose or treat alcohol use disorder.*

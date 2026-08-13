@@ -74,8 +74,12 @@ npm run dev
 
 Without a DSN, Sentry init is a no-op and the site runs normally.
 
+## Analytics
+
+Web Analytics is wired via `@vercel/analytics` (`<Analytics />` in `src/app/layout.tsx`).
+Enable **Web Analytics** for the project in the Vercel dashboard (Project → Analytics) so
+events are collected. No env vars required; data appears after the next production deploy.
+
 ## Phase 2 (not done)
 
-- More SEO posts (series 6–12)  
-- Vercel Analytics  
-- Resend production from-domain (verify domain in Resend)  
+- Vercel Speed Insights (`@vercel/speed-insights`) if page-perf data is wanted  

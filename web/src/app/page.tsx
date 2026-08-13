@@ -26,13 +26,14 @@ export default function Home() {
               Wallet gains · calorie gains
             </p>
             <h1 className="mt-5 text-[clamp(2.6rem,6vw,4.2rem)] leading-[1.02] font-extrabold tracking-[-0.05em]">
-              Level up your
+              Watch your
               <br />
-              <span className="text-gain">drink-free gains</span>
+              <span className="text-gain">drink-free gains</span> add up
             </h1>
             <p className="mt-5 max-w-md text-[1.1rem] leading-relaxed text-muted">
-              Quit or cut back — same game. Stack money saved <em>and</em> calories not
-              added (from real drink averages), earn points for missions, unlock treats.
+              Quit or cut back — same goal. Track money saved <em>and</em> calories not
+              added (from real drink averages), with daily missions, points, and rewards
+              that keep you moving.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -134,10 +135,10 @@ export default function Home() {
         <section id="play" className="bg-white py-16 md:py-20">
           <div className="mx-auto max-w-[1120px] px-6 md:px-8">
             <p className="text-[0.8rem] font-bold tracking-[0.1em] text-gain uppercase">
-              How you play
+              How it works
             </p>
             <h2 className="mt-2 max-w-xl text-[clamp(1.8rem,3.5vw,2.6rem)] font-extrabold tracking-[-0.04em]">
-              Cravings are boss fights. Missions are daily quests.
+              Ride out cravings. Build momentum every day.
             </h2>
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
               <MissionBoard />
@@ -153,12 +154,13 @@ export default function Home() {
         <section id="trust" className="border-y border-line bg-white px-6 py-12 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[1.35rem] font-extrabold tracking-tight">
-              Fun tool. Not a medical device.
+              A habit companion. Not a medical device.
             </h2>
             <p className="mt-3 text-[0.95rem] leading-relaxed text-muted">
-              Drink Free is a habit companion for adults 18+. Calorie figures are serve
-              averages for motivation, not dietary advice. We don’t diagnose or treat alcohol
-              use disorder — if you need clinical help, talk to a professional.
+              Drink Free is a habit companion, not a medical device. We do not diagnose or
+              treat alcohol use disorder. It’s for adults 18+; calorie figures are serve
+              averages for motivation, not dietary advice. If you need clinical help, talk to
+              a professional.
             </p>
           </div>
         </section>
@@ -171,7 +173,7 @@ export default function Home() {
             Hop on the waitlist
           </h2>
           <p className="mx-auto mt-3 max-w-md text-[1.05rem] text-muted">
-            iOS first. Charts for cash and calories — the gamey way to quit or cut back.
+            iOS first. Charts for cash and calories — a clearer way to quit or cut back.
           </p>
           <WaitlistForm />
         </section>

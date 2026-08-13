@@ -3,7 +3,7 @@ type LogoProps = {
   markOnly?: boolean
 }
 
-/** Playful rising-drop mark — gamey, not clinical */
+/** Rising-drop mark — motivating, not clinical */
 export function Logo({ className = '', markOnly = false }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
