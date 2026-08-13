@@ -17,6 +17,7 @@
 | 6 | Mon 10 Aug 2026 | ~16:08 | ~16:12 | Project folder: `~/GODRINKFREE` (Landing page / App / Research) |
 | 7 | Mon 10 Aug 2026 | ~16:14 | ~17:39 | Port Vite landing → Next.js; deploy to Vercel; live waitlist + pricing block; clean repo; GitHub push |
 | 8 | Tue 11 Aug 2026 | ~12:56 | ~13:20 | Scratch Sanity → Sentry; MDX SEO blog posts 1–5; /blog live |
+| 9 | Thu 13 Aug 2026 | ~10:00 | ~11:35 | Resend live; fix waitlist save bug; rebrand copy (drop "gamey"); brand email; Vercel Analytics |
 
 ---
 
@@ -165,6 +166,26 @@
 - Add Resend env vars when ready
 - Add `NEXT_PUBLIC_SENTRY_DSN` in Vercel
 - Vercel Analytics
+
+---
+
+## Session 9 — Thu 13 Aug 2026 (~10:00 → ~11:35 BST)
+
+**Goal:** Turn on Resend confirmations; fix the waitlist; drop "gamey" voice; wire analytics.
+
+**Done**
+- **Resend live:** verified domain, keys in Vercel (Sensitive → read as blank on `env pull`, which is expected). Confirmation emails now send.
+- **Fixed waitlist save bug:** app used `upsert` (`ON CONFLICT DO NOTHING`), which Postgres only allows with SELECT — but `anon` is INSERT-only so signup emails stay private. Every signup failed with "permission denied" before the email could send. Switched to a plain `insert`, treating unique-violation (`23505`) as success. Verified end-to-end (row saved, email delivered).
+- **Rebrand voice → serious-but-motivating:** removed all "game / gamey / level up / boss fights / quests / game mode" framing across landing, components, OG image, metadata; kept the energetic look and "points". Updated `CLAUDE.md` brand voice + guardrail.
+- **Branded the waitlist email:** email-client-safe HTML (brand header, twin-gains tiles, exact wellness disclaimer) + plain-text fallback.
+- **Vercel Analytics:** added `@vercel/analytics` `<Analytics />` to root layout; documented dashboard enable in `DEPLOY.md`.
+- Code Rabbit: 5 "major" (all wellness-disclaimer); fixed email + trust-section to exact wording; OG/meta/CTA accepted as trade-offs.
+
+**Open / next**
+- Confirm **Web Analytics** is toggled on in Vercel dashboard (Project → Analytics) so data collects.
+- Optional: Vercel Speed Insights (`@vercel/speed-insights`).
+- Add `NEXT_PUBLIC_SENTRY_DSN` in Vercel.
+- Optional: sweep "game" language out of the 12 blog posts (kept as-is this session).
 
 ---
 
