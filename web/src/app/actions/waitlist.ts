@@ -33,12 +33,14 @@ export async function joinWaitlist(
     return { ok: false, message: 'Waitlist service unavailable. Try again later.' }
   }
 
-  const { error } = await supabase.from('waitlist').upsert(
-    { email: raw, source: 'landing' },
-    { onConflict: 'email', ignoreDuplicates: true },
-  )
+  // Plain insert (anon has INSERT only — no SELECT). Upsert's ON CONFLICT path
+  // would require SELECT, so a repeat signup is handled via the unique-violation code.
+  const { error } = await supabase
+    .from('waitlist')
+    .insert({ email: raw, source: 'landing' })
 
-  if (error) {
+  // 23505 = unique_violation → already on the list, so treat as success.
+  if (error && error.code !== '23505') {
     console.error('[waitlist]', error.message)
     return { ok: false, message: 'Couldn’t save that email. Try again in a moment.' }
   }
